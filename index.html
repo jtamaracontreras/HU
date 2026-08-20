@@ -11,14 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#161c28;--ink-2:#2a3446;--paper:#f4f6f9;--card:#ffffff;
-    --line:#dde3ec;--line-strong:#c3ccda;
-    --cobalt:#2f5fd0;--cobalt-soft:#e7edfb;
-    --violet:#8a4fd0;--violet-soft:#f0e6fb;
+    --ink:#20252c;--ink-2:#3a4149;--paper:#f5f5f4;--card:#ffffff;
+    --line:#e5e3df;--line-strong:#cfccc6;
+    --cobalt:#fd730e;--cobalt-soft:#ffe9d6;   /* naranja HU (se conserva el nombre para el resto del código) */
+    --violet:#c0562a;--violet-soft:#f6e4da;
     --green:#1f7a5c;--green-soft:#e2f3ec;
     --amber:#b57612;--amber-soft:#fbf1dc;
     --red:#c0392b;--red-soft:#fbe7e4;
-    --muted:#68738a;
+    --muted:#7a7a74;
+    --wm-url:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAEjCAYAAAA41BqSAAABamlDQ1BJQ0MgUHJvZmlsZQAAeJx1kL1Lw1AUxU+rUtA6iA4dHDKJQ9TSCnZxaCsURTBUBatTmn4JbXwkKVJxE1cp+B9YwVlwsIhUcHFwEEQHEd2cOim4aHjel1TaIt7H5f04nHO5XMAbUBkr9gIo6ZaRTMSktdS65HuDh55TqmayqKIsCv79u+vz0fXeT4hZTbt2ENlPXJfOLpd2ngJTf/1d1Z/Jmhr939RBjRkW4JGJlW2LCd4lHjFoKeKq4LzLx4LTLp87npVknPiWWNIKaoa4SSynO/R8B5eKZa21g9jen9VXl8Uc6lHMYRMmGIpQUYEEBeF//NOOP44tcldgUC6PAizKREkRE7LE89ChYRIycQhB6pC4c+t+D637yW1t7xWYbXDOL9raQgM4naGT1dvaeAQYGgBu6kw1VEfqofbmcsD7CTCYAobvKLNh5sIhd3t/DOh74fxjDPAdAnaV868jzu0ahZ+BK/0HFylqvLiAv9gAAAk/SURBVHja7d3LjvK4FoBRLhnzsjwHL8sc0YMWUv2lAnKxne3ttaQenKNuKsTOFyekqOPhcDg8rpfnoWPn2/14gIIe18vTvKJ3k11ApiiXWAS8Xuev1xN9c0rgIenB9/tnCj6hA9/7GQoxj7Rdgo8VPCS9NHZbxxwMFfjz7X60isfBZJWPFTyIuVX+EDIsfgUeMbfKxwoexNwqH4FH0LHKR+ARdASfOk52AeJujBB4AAQeAIEHQOABEHgAgbcLAAQeAIEHQOABEHgABB5A4O0CAIEHQOABEHgABB4AgQcQeLsAQOABEHgABB4AgQdA4AEE3i4AEHgABB4AgQdA4AEQeACBtwv45nG9PO0FEHgABB4AgQdA4AEQeACBB0DgARB4AAQeAIEHQOABBB4AgQdA4AEQeAAEHgCBBxB4AAQeAIEHQOABEHgABB5A4AEQeAAEHgCBB0DgARB4AIEHQOABEHgABB4AgQdA4AEEHgCBB0DgARB4AAQeAIEHEHgABB4AgQdA4AEQeAAEHkDgo3tcL09DCfCvKcsbEXmAhCt4AAQeQOABEHgABB4AgQdA4AEQeACBB0DgARB4AAQeAIEHQOABBB4AgQdA4AEQeAAEHgCBBxB4AAQeAIEHQOABEHgABB5A4AEQeAAEHgCBB0DgARB4AIEHQOABEHgABB4AgQf+97henvYCAg8g8AAIPAACD4DAAyDwALxMWd7I+XY/Gs46PHoHVvDiDiDwAAg8AAIPgMADCDwAAg+QRobHgwUewAoeAIEHQOCBsny1BAIPIPAwFt9tRIaroPPtfhR4ACt4AAQe2JUPWhF4AIEHcPUj8IBQsavXk2ACD5CUwMOHFRCuegQeAIEHrEjtK4EHhAuBB3ASPBz+/fxI4GHGgSJgWMEDOPkJPCBkCDzsxvPwTno9z1eBB0GzL6zgAWGzDwQeEDjvvam/bicKPKw4cITOe7aCBwTPexV4QPi8x7JXmQIPHB7XyzNrBEf+vEHgYcMKSQy9n8gmhy7wVxR7PqmNFPZP42QFD1bxqSLpOX8reCDRan7UqH8bF4GHhQfU6M+PR4m9lboVPJAo9qI+f/Uu8GAVXy24a+Nv31rBAx3Hn/qr98PBUzRQ9QCDPQk8QNLFhcCDVTxW8AD0tKgQeLCKxwoeEHl6mmcCD5B0ESHwYBVPUgIPIk/SeSXwAEkXDQIPVvEkJfAg8iSdRwIPIk/S+SPwAEkXBwIPVvEknTMCDyJPUgIPIk+AOVJjngg8iDxJ54bAg8iTdE4IPIg8SQk8iDxJ54HAg8iTdPwFHkSehmPectwFHkSepGMt8CDyJB1jgYcBL90Z4wQu8CAGJD1pCzyIPEnHcDIUEDcQj+vlaW8IuxU8CAbGygoerOYZ4SRsBQ8dhcSKXtyt4MGKnoHDLvAg9CSM+k9u0UCC8Lh1I+5W8GBFT/KoCzwIPYnDLvAwUKjEfpyoCzyIvX0ywOcWAg9iL+gCD4wQvSzR92SRwANfwthD8MVc4IHC8dwj/mI+X4rHqQx4fT3PEfMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICtHtfL83G9PHvb7snQAbwPe8/bL/AAycIu8ABJw/5yNKSAsH8P+/l2766XJ0MLkC/uh4NbNACpoi7wAInDDgAAAEn1+puMrB/vDPP0+O7NlLoP9bheniXvaUV7nGnJRGi1XbXHc81/t+XnlzrYlm5DpLF9ty1rf+7SOVL652+Zq6Xn99L5VeM913oPU40z1e/XfP3vkpNx7r9f68Bbs9/23K4SJ9otc6XFe997bHv/cG7Ne2j9vkv2au1r1ZrLNfblqYdJF+nSutTr7XEJGOWyM+rtjq3bNeptnN7ec8lxqtGXIQIfbcfVOHijv54w4GTUt9NIgxB11eiAi78d59v9+PrHmPb5npd+prLkdknUVfzU6yC82/nf/vu19xnXbNPc/67lfcxaP2vNB2O1f2atn/H6/z69pwz35KPMrVZd+TTWc16n5Psv9VpTT4Mw5w2XPvi2bFPLybHnCmrruOwdhrVPNZxv96PbTP1bMve+9SXaSe6UcRBKre5KnHBarzizXE5nnZcjrOJ72qa149di3Evsy1P2QVh7K2ft626ZGCUe2xLEfd7T73v0I4e/l/m4dYxqtGW4FXzNA+XbLZPeI2d16STmiqLOL2i1GuutHToZhH1e6/eqb8tVQYbYuG2U68Tk6bAYT9X4gx+DHqzRDsCIJyInnfkLlZH3X+SrgVP2nfbt9d491SFC42xvjc9FyH9noOVcXDsPTw74cVcY9v38OerbJM2xVm0reQKavm2cZ32tUKKezEt+2+Pcef773/GB6vd9OOIvfdU6fpbux6n1QUmdR0IjT7zSv0/QOlBzxlLAiHiy9DdZg61Sa36VwNYJ8ymAES5H94q80FvFR92XnqJJdiLp6SCKuq1bHlt1xet+fCQCzy7xahn3LT9rTex7/nNvZnmuk+VU+sAwSVw+twp76yuAnz+vxreWZrqicqum/nG7KfBbvmtl5Mi3WOlFuz2z9muSM4yzBY3I73nF9W0/nqIcKIx5ksv8XsX/c5xq759WnwW0WHCtfS+h/2TfXoPQ64dEP38h590/e8coY/QsUuybPfflp2PKh6zBTmC9fYeMA5vIc6H2Yi368XiKPAFqD8KSv8bksjvvKn7p1U7vkTSH6+/HWie1pa97yh6DGpN5r22qfWCWfn2r+HjHx15xz/ZFfdH/RGa4wLf+S0dL/o5opG2yio+3r/Z+qmnJH3ffc39Gecrrr6u3kvs70tycegrCHr9sMufX8+dsV81JUfL3FUo/wtbDY7O9PM73bS56omf9PPx2LM/dfy1/n2TONk09DsLWgSg9CJ8mR6ntKb1KbBneGgFd+m2nJX5O9KuxHr4PaM8T/pyfvfVvNUd7P+FW8Gu/trXmINTcptHvU29dJS+9PbE19L0cH7Tdf1GP41PUQYj2ujX+Zuoo39vew4msp69Q6PnrHiLMhUzHcfjfZG0R1NKv1fp1an2IFyW6kVbH0RYBtcau5bZGjXzv+3DOvgz/mGTEiG0Z2CiTYsSDuuZ27rUSbrWttY6jEv9N65NyiYVAq/lzrLE6nPNhaM3VXrQPuEptjz8qEesqo5dbbObLuP4DOUyWEDLUv18AAAAASUVORK5CYII=");
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -54,7 +55,7 @@
   .btn{appearance:none;cursor:pointer;font:inherit;font-weight:600;border-radius:10px;padding:9px 14px;border:1px solid var(--line-strong);background:var(--card);color:var(--ink);display:inline-flex;align-items:center;gap:7px}
   .btn:hover{border-color:var(--cobalt);color:var(--cobalt)}
   .btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
-  .btn.primary:hover{background:#254dab}
+  .btn.primary:hover{background:#d95f00}
   .btn.ghost{border-color:transparent;background:transparent;color:var(--muted)}
   .btn.ghost:hover{color:var(--red)}
 
@@ -89,7 +90,7 @@
   .savebar{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-left:auto}
   .dot{width:8px;height:8px;border-radius:50%;background:var(--green)} .dot.saving{background:var(--amber)}
   .filterbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
-  .note{background:var(--cobalt-soft);border:1px solid #cfdcf7;color:var(--ink-2);border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:12px;display:flex;gap:9px;align-items:flex-start}
+  .note{background:var(--cobalt-soft);border:1px solid #f6cfae;color:var(--ink-2);border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:12px;display:flex;gap:9px;align-items:flex-start}
   /* pantalla de acceso */
   #gate{position:fixed;inset:0;background:var(--ink);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px}
   #gate.hidden{display:none}
@@ -101,7 +102,13 @@
   .gate-card input:focus{outline:2px solid var(--cobalt-soft);border-color:var(--cobalt)}
   .gate-card .err{color:var(--red);font-size:13px;font-weight:600;min-height:18px;margin-bottom:4px}
   .gate-card button{width:100%;background:var(--cobalt);color:#fff;border:none;border-radius:10px;padding:11px;font:inherit;font-weight:600;cursor:pointer}
-  .gate-card button:hover{background:#254dab}
+  .gate-card button:hover{background:#d95f00}
+  .gate-logo{width:96px;height:auto;display:block;margin:0 auto 14px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+  /* marca de agua con el logo HU */
+  .wm{position:relative}
+  .wm::before{content:"";position:absolute;inset:0;background-image:var(--wm-url);background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.06;pointer-events:none;z-index:0}
+  .wm > *{position:relative;z-index:1}
+  .head.wm::before{background-position:right -10px top -10px;background-size:auto 150%;opacity:.05}
   .gate-alt{margin-top:14px}
   .gate-alt a{color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px dotted var(--muted)}
   .gate-alt a:hover{color:var(--cobalt);border-color:var(--cobalt)}
@@ -122,7 +129,7 @@
   .emp-seg.locked button:hover{border-color:var(--line-strong);background:#fff}
   .emp-seg.locked button.sel:hover{background:var(--cobalt)}
   .emp-save{width:100%;background:var(--cobalt);color:#fff;border:none;border-radius:10px;padding:12px;font:inherit;font-weight:600;cursor:pointer}
-  .emp-save:hover{background:#254dab}
+  .emp-save:hover{background:#d95f00}
   .emp-save:disabled{background:var(--line-strong);cursor:default}
   .emp-saved{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green-soft);color:var(--green);border-radius:10px;padding:12px;font-weight:600}
   .emp-edit{appearance:none;border:1px solid var(--line-strong);background:#fff;cursor:pointer;border-radius:9px;padding:8px 10px;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);font:inherit;font-weight:600;font-size:13px;margin-left:6px}
@@ -172,7 +179,8 @@
 <body>
 <div id="gate">
   <div class="gate-card">
-    <div class="eyebrow">Evento · Pedido de playeras</div>
+    <img class="gate-logo" src="data:image/png;base64,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" alt="Hogares Unión">
+    <div class="eyebrow">Queremos conocer tu talla</div>
     <!-- modo empleado -->
     <div id="gate-emp">
       <h2>Registra tu talla</h2>
@@ -197,16 +205,16 @@
 <!-- vista individual del empleado -->
 <div id="emp-view" style="display:none">
   <div class="emp-wrap">
-    <div class="eyebrow" style="color:var(--cobalt)">Evento · Pedido de playeras</div>
+    <div class="eyebrow" style="color:var(--cobalt)">Queremos conocer tu talla</div>
     <h1 class="emp-title">Tu talla</h1>
-    <div class="emp-card" id="emp-card"></div>
+    <div class="emp-card wm" id="emp-card"></div>
     <button class="emp-exit" id="emp-exit">Salir</button>
   </div>
 </div>
 
 <div class="wrap">
-  <div class="head">
-    <div class="eyebrow">Evento · Pedido de playeras</div>
+  <div class="head wm">
+    <div class="eyebrow">Queremos conocer tu talla</div>
     <h1>Conteo y captura de tallas</h1>
     <p>Cuenta la plantilla por región y área, y captura la talla de cada persona.</p>
     <div class="chips">
