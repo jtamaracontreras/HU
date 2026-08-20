@@ -245,6 +245,7 @@ const SEXES = ["Mujer","Hombre"];
 const SUPABASE_URL      = "https://usewhxkorrtplkbwbuxf.supabase.co";       // ej. https://xxxxx.supabase.co
 const SUPABASE_ANON_KEY = "sb_publishable_IKeiigfpphEdtQooHx59kA_nyWP6eMb";  // llave "Publishable" (sb_publishable_...) o "anon public"
 const ACCESS_CODE       = "HU2026";                // contraseña de acceso (cámbiala)
+const ADMIN_CODE        = "CEC2026";               // contraseña de administrador (exportar y borrar)
 // ==========================================================
 
 const PEOPLE = DATA.people.map((p,i)=>({...p,id:"p"+i}));
@@ -544,14 +545,15 @@ function initEvents(){
   document.getElementById("f-region").addEventListener("change",e=>{populateAreas(e.target.value);applyFilters();});
   document.getElementById("f-area").addEventListener("change",applyFilters);
   document.getElementById("f-status").addEventListener("change",applyFilters);
-  document.getElementById("export-xlsx").addEventListener("click",exportXLSX);
-  document.getElementById("export-csv").addEventListener("click",exportCSV);
+  document.getElementById("export-xlsx").addEventListener("click",()=>{ if(requireAdmin()) exportXLSX(); });
+  document.getElementById("export-csv").addEventListener("click",()=>{ if(requireAdmin()) exportCSV(); });
   document.getElementById("refresh").addEventListener("click",async()=>{
     const b=document.getElementById("refresh");b.disabled=true;b.textContent="Actualizando…";
     await syncFromRemote();
     b.disabled=false;b.textContent="Actualizar";
   });
   document.getElementById("reset").addEventListener("click",async()=>{
+    if(!requireAdmin(true)) return;   // siempre pide contraseña (acción destructiva)
     if(!confirm("Esto borra TODAS las tallas de la base compartida, para todos. El conteo de personas no cambia. ¿Continuar?")) return;
     const old={...sizeState};
     sizeState={};
@@ -559,6 +561,17 @@ function initEvents(){
     applyStateToDOM(old,{});
     refreshCountsAndResumen();setSaveState("saved");
   });
+}
+
+// pide la contraseña de administrador; la recuerda durante la sesión.
+// Con force=true la pide siempre (para acciones destructivas como borrar).
+function requireAdmin(force){
+  if(!force && sessionStorage.getItem("admin_ok")==="1") return true;
+  const val=prompt("Contraseña de administrador:");
+  if(val===null) return false;               // canceló
+  if(val===ADMIN_CODE){ sessionStorage.setItem("admin_ok","1"); return true; }
+  alert("Contraseña de administrador incorrecta.");
+  return false;
 }
 
 // ---------- pantalla de acceso ----------
