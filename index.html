@@ -28,14 +28,14 @@
   h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0}
   .num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
 
-  .head{margin-bottom:18px}
+  .head{background:var(--ink);color:#fff;border-radius:16px;padding:22px 24px 24px;margin-bottom:18px;overflow:hidden}
   .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cobalt);font-weight:600}
-  .head h1{font-size:30px;font-weight:700;letter-spacing:-.01em;margin:4px 0 2px}
-  .head p{margin:0;color:var(--muted);font-size:14px}
+  .head h1{font-size:30px;font-weight:700;letter-spacing:-.01em;margin:4px 0 2px;color:#fff}
+  .head p{margin:0;color:rgba(255,255,255,.72);font-size:14px}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
   .chip{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:120px}
   .chip .k{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .chip .v{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;line-height:1.1;margin-top:2px}
+  .chip .v{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;line-height:1.1;margin-top:2px;color:var(--ink)}
   .chip.h .v{color:var(--cobalt)} .chip.m .v{color:var(--violet)}
 
   .tabs{display:flex;gap:6px;margin:22px 0 16px;border-bottom:2px solid var(--line)}
@@ -108,16 +108,16 @@
   .wm{position:relative}
   .wm::before{content:"";position:absolute;inset:0;background-image:var(--wm-url);background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.06;pointer-events:none;z-index:0}
   .wm > *{position:relative;z-index:1}
-  .head.wm::before{background-position:right -10px top -10px;background-size:auto 150%;opacity:.05}
+  .head.wm::before{background-position:right -20px top -30px;background-size:auto 190%;opacity:.13}
   .gate-alt{margin-top:14px}
   .gate-alt a{color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px dotted var(--muted)}
   .gate-alt a:hover{color:var(--cobalt);border-color:var(--cobalt)}
-  /* vista individual del empleado */
+  .emp-card.wm::before{opacity:.06;background-size:82%}
   #emp-view{min-height:100vh;background:var(--paper);display:flex;align-items:center;justify-content:center;padding:20px}
   .emp-wrap{max-width:440px;width:100%;text-align:center}
-  .emp-title{font-family:'Space Grotesk';font-size:26px;margin:4px 0 18px}
+  .emp-title{font-family:'Space Grotesk';font-size:26px;margin:4px 0 18px;color:var(--ink)}
   .emp-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 22px;box-shadow:0 10px 40px rgba(0,0,0,.06)}
-  .emp-name{font-family:'Space Grotesk';font-weight:600;font-size:20px}
+  .emp-name{font-family:'Space Grotesk';font-weight:600;font-size:20px;color:var(--ink)}
   .emp-meta{color:var(--muted);font-size:13px;margin-top:2px;margin-bottom:20px}
   .emp-label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
   .emp-seg{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:18px}
@@ -183,7 +183,7 @@
     <div class="eyebrow">Queremos conocer tu talla</div>
     <!-- modo empleado -->
     <div id="gate-emp">
-      <h2>Registra tu talla</h2>
+      <h2>Bienvenido</h2>
       <p>Escribe tu correo institucional para ver y elegir tu talla.</p>
       <input id="gate-email" type="email" placeholder="tucorreo@empresa.mx" autocomplete="off">
       <div class="err" id="gate-err"></div>
@@ -206,7 +206,7 @@
 <div id="emp-view" style="display:none">
   <div class="emp-wrap">
     <div class="eyebrow" style="color:var(--cobalt)">Queremos conocer tu talla</div>
-    <h1 class="emp-title">Tu talla</h1>
+    <h1 class="emp-title" style="display:none"></h1>
     <div class="emp-card wm" id="emp-card"></div>
     <button class="emp-exit" id="emp-exit">Salir</button>
   </div>
